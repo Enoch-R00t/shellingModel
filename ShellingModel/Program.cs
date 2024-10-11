@@ -1,4 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
+using ShellingModel.AbstractClasses;
+using ShellingModel.Enums;
+using ShellingModel.Objects;
 
 namespace ShellingModel
 {
@@ -48,15 +51,6 @@ namespace ShellingModel
                 shellingGrid.WriteGrid();
             }
             
-
-           // Console.WriteLine();
-            //Console.WriteLine($"Orig X:{shellingGridOrig.Count(TypeEnum.X)}");
-            //Console.WriteLine($"Orig O:{shellingGridOrig.Count(TypeEnum.O)}");
-            //Console.WriteLine($"Orig Blank:{shellingGridOrig.Count(TypeEnum.Blank)}");
-
-           
-       
-
             Console.WriteLine();
             Console.WriteLine($"Total number of elements:{gridWidth * gridHeight}");
             Console.WriteLine($"X:{shellingGrid.Count(TypeEnum.X)}");
@@ -98,7 +92,6 @@ namespace ShellingModel
                             {
                                 moves++;
                             }
-                            
                         }
                         else
                         {
@@ -113,8 +106,6 @@ namespace ShellingModel
 
             return moves;
         }
-
-
 
         static void PopulateGrid()
         {
@@ -162,15 +153,11 @@ namespace ShellingModel
                             shellingGridOrig.Grid[h, w] = shellingObject;
                             break;
                     }
-
                     w++;
                 }
                 w = 0;
                 h++;
             }
         }
-
     }
-
-
 }

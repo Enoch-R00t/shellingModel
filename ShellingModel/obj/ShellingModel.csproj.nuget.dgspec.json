@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grady\\source\\repos\\shellingModel\\ShellingModel\\ShellingModel.csproj": {}
+    "C:\\Users\\grady\\source\\repos\\ShellingModel\\ShellingModel\\ShellingModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grady\\source\\repos\\shellingModel\\ShellingModel\\ShellingModel.csproj": {
+    "C:\\Users\\grady\\source\\repos\\ShellingModel\\ShellingModel\\ShellingModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grady\\source\\repos\\shellingModel\\ShellingModel\\ShellingModel.csproj",
+        "projectUniqueName": "C:\\Users\\grady\\source\\repos\\ShellingModel\\ShellingModel\\ShellingModel.csproj",
         "projectName": "ShellingModel",
-        "projectPath": "C:\\Users\\grady\\source\\repos\\shellingModel\\ShellingModel\\ShellingModel.csproj",
+        "projectPath": "C:\\Users\\grady\\source\\repos\\ShellingModel\\ShellingModel\\ShellingModel.csproj",
         "packagesPath": "C:\\Users\\grady\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\grady\\source\\repos\\shellingModel\\ShellingModel\\obj\\",
         "projectStyle": "PackageReference",

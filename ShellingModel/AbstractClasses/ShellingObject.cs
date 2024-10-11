@@ -1,15 +1,16 @@
-﻿using ShellingModel;
+﻿using ShellingModel.Enums;
+using ShellingModel.Objects;
 
-namespace ShellingModel
+namespace ShellingModel.AbstractClasses
 {
     internal abstract class ShellingObject
     {
-        internal TypeEnum Type;
-        internal decimal Discomfortability;
         internal short xLoc;
         internal short yLoc;
         internal ShellingGrid shellingGrid;
         internal List<TypeEnum> badTypes;
+        internal TypeEnum Type;
+        internal decimal Discomfortability;
 
         protected ShellingObject(decimal discomfortability, short xLoc, short yLoc, ref ShellingGrid shellingGrid)
         {
@@ -19,7 +20,7 @@ namespace ShellingModel
             this.shellingGrid = shellingGrid;
         }
 
-        internal virtual string DisplayValue => this.Type.ToString();
+        internal virtual string DisplayValue => Type.ToString();
 
         internal bool TryMove()
         {
@@ -33,7 +34,7 @@ namespace ShellingModel
                 {
                     if (shellingGrid.Grid[y, x].Type == TypeEnum.Blank)
                     {
-                        if (Search(x, y))
+                        if (IsIndexValidForMe(x, y))
                         {
                             // Console.WriteLine($"Good here: {y},{x}");
                             // Console.WriteLine($"Moving {yLoc},{xLoc} to {y},{x}");
@@ -58,7 +59,7 @@ namespace ShellingModel
                 {
                     if (shellingGrid.Grid[y, x].Type == TypeEnum.Blank)
                     {
-                        if (Search(x, y))
+                        if (IsIndexValidForMe(x, y))
                         {
                             //   Console.WriteLine($"Good here: {y},{x}");
                             //   Console.WriteLine($"Moving {yLoc},{xLoc} to {y},{x}");
@@ -71,7 +72,6 @@ namespace ShellingModel
 
                     x++;
                 }
-
                 x = 0;
                 y++;
             }
@@ -79,7 +79,7 @@ namespace ShellingModel
             return false;
         }
 
-        internal bool Search(short x, short y)
+        internal bool IsIndexValidForMe(short x, short y)
         {
             short badCount = 0;
 
@@ -233,8 +233,8 @@ namespace ShellingModel
         {
             short badCount = 0;
 
-            short x = this.xLoc;
-            short y = this.yLoc;
+            short x = xLoc;
+            short y = yLoc;
 
             //Console.WriteLine($"Checking blank location at: {y},{x}");
 
@@ -244,7 +244,7 @@ namespace ShellingModel
             {
                 //Console.WriteLine($"{y - 1},{x - 1},{shellingGrid.Grid[y - 1, x - 1].DisplayValue}");
 
-                if (shellingGrid.Grid[y - 1, x - 1].Type != this.Type && shellingGrid.Grid[y - 1, x - 1].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y - 1, x - 1].Type != Type && shellingGrid.Grid[y - 1, x - 1].Type != TypeEnum.Blank)
                 {
                     //Console.WriteLine("no good");
                     badCount++;
@@ -261,7 +261,7 @@ namespace ShellingModel
             {
                 //Console.WriteLine($"{y - 1},{x},{shellingGrid.Grid[y - 1, x].DisplayValue}");
 
-                if (shellingGrid.Grid[y - 1, x].Type != this.Type && shellingGrid.Grid[y - 1, x].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y - 1, x].Type != Type && shellingGrid.Grid[y - 1, x].Type != TypeEnum.Blank)
                 {
                     //Console.WriteLine("no good");
                     badCount++;
@@ -278,7 +278,7 @@ namespace ShellingModel
             {
                 //Console.WriteLine($"{y - 1},{x + 1},{shellingGrid.Grid[y - 1, x + 1].DisplayValue}");
 
-                if (shellingGrid.Grid[y - 1, x + 1].Type != this.Type && shellingGrid.Grid[y - 1, x + 1].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y - 1, x + 1].Type != Type && shellingGrid.Grid[y - 1, x + 1].Type != TypeEnum.Blank)
                 {
                     //Console.WriteLine("no good");
                     badCount++;
@@ -295,7 +295,7 @@ namespace ShellingModel
             {
                 //Console.WriteLine($"{y},{x + 1},{shellingGrid.Grid[y, x + 1].DisplayValue}");
 
-                if (shellingGrid.Grid[y, x + 1].Type != this.Type && shellingGrid.Grid[y, x + 1].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y, x + 1].Type != Type && shellingGrid.Grid[y, x + 1].Type != TypeEnum.Blank)
                 {
                     //Console.WriteLine("no good");
                     badCount++;
@@ -312,7 +312,7 @@ namespace ShellingModel
             {
                 // Console.WriteLine($"{y + 1},{x + 1},{shellingGrid.Grid[y + 1, x + 1].DisplayValue}");
 
-                if (shellingGrid.Grid[y + 1, x + 1].Type != this.Type && shellingGrid.Grid[y + 1, x + 1].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y + 1, x + 1].Type != Type && shellingGrid.Grid[y + 1, x + 1].Type != TypeEnum.Blank)
                 {
                     // Console.WriteLine("no good");
                     badCount++;
@@ -329,7 +329,7 @@ namespace ShellingModel
             {
                 //Console.WriteLine($"{y + 1},{x},{shellingGrid.Grid[y + 1, x].DisplayValue}");
 
-                if (shellingGrid.Grid[y + 1, x].Type != this.Type && shellingGrid.Grid[y + 1, x].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y + 1, x].Type != Type && shellingGrid.Grid[y + 1, x].Type != TypeEnum.Blank)
                 {
                     //Console.WriteLine("no good");
                     badCount++;
@@ -346,7 +346,7 @@ namespace ShellingModel
             {
                 //Console.WriteLine($"{y + 1},{x - 1},{shellingGrid.Grid[y + 1, x - 1].DisplayValue}");
 
-                if (shellingGrid.Grid[y + 1, x - 1].Type != this.Type && shellingGrid.Grid[y + 1, x - 1].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y + 1, x - 1].Type != Type && shellingGrid.Grid[y + 1, x - 1].Type != TypeEnum.Blank)
                 {
                     //Console.WriteLine("no good");
                     badCount++;
@@ -358,7 +358,6 @@ namespace ShellingModel
             }
 
 
-
             //check left
             // Console.WriteLine($"Checking Left: {y},{x - 1}");
             if (x < shellingGrid.GridWidth && x > 0)
@@ -366,7 +365,7 @@ namespace ShellingModel
 
                 //Console.WriteLine($"{y},{x - 1},{shellingGrid.Grid[y, x - 1].DisplayValue}");
 
-                if (shellingGrid.Grid[y, x - 1].Type != this.Type && shellingGrid.Grid[y, x - 1].Type != TypeEnum.Blank)
+                if (shellingGrid.Grid[y, x - 1].Type != Type && shellingGrid.Grid[y, x - 1].Type != TypeEnum.Blank)
                 {
                     //Console.WriteLine("no good");
                     badCount++;
@@ -376,7 +375,6 @@ namespace ShellingModel
             {
                 //Console.WriteLine("Not Found");
             }
-
 
             //Console.WriteLine(badCount <= Discomfortability);
             return badCount <= Discomfortability;

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShellingModel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8cb068eb5267692a888143b9205c8691dc046de4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c38dbab1f9762addea5a101ee9c4444b148483ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShellingModel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShellingModel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

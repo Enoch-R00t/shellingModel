@@ -1,11 +1,14 @@
-﻿namespace ShellingModel
+﻿using ShellingModel.AbstractClasses;
+using ShellingModel.Enums;
+
+namespace ShellingModel.Objects
 {
-    internal class T : ShellingObject
+    internal class X : ShellingObject
     {
-        public T(decimal discomfortability, short xLoc, short yLoc, ref ShellingGrid shellingGrid) 
+        public X(decimal discomfortability, short xLoc, short yLoc, ref ShellingGrid shellingGrid)
             : base(discomfortability, xLoc, yLoc, ref shellingGrid)
         {
-            this.Type = TypeEnum.T;
+            Type = TypeEnum.X;
 
             Array values = Enum.GetValues(typeof(TypeEnum));
             badTypes = values.Cast<TypeEnum>().ToList()

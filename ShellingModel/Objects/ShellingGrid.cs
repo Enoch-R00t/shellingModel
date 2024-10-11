@@ -1,4 +1,7 @@
-﻿namespace ShellingModel
+﻿using ShellingModel.AbstractClasses;
+using ShellingModel.Enums;
+
+namespace ShellingModel.Objects
 {
     internal class ShellingGrid
     {
@@ -25,7 +28,7 @@
                 {
                     if (Grid[y, x].Type == type)
                     {
-                        count++;  
+                        count++;
                     }
 
                     x++;
@@ -42,7 +45,7 @@
             short w = 0;
             short h = 0;
 
-            while (h < this.GridHeight)
+            while (h < GridHeight)
             {
                 while (w < GridWidth)
                 {
@@ -58,7 +61,7 @@
                         Console.Write(Grid[h, w]?.DisplayValue);
                         Console.ResetColor();
                     }
-                   
+
                     w++;
                 }
                 Console.WriteLine();

@@ -1,9 +1,9 @@
-﻿namespace ShellingModel
+﻿namespace ShellingModel.Enums
 {
     internal enum TypeEnum
     {
         X,
-       // Y,
+        // Y,
         O,
         T,
         Blank
