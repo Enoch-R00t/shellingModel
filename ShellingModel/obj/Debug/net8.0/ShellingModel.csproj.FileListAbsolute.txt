@@ -1,0 +1,15 @@
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\bin\Debug\net8.0\ShellingModel.exe
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\bin\Debug\net8.0\ShellingModel.deps.json
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\bin\Debug\net8.0\ShellingModel.runtimeconfig.json
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\bin\Debug\net8.0\ShellingModel.dll
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\bin\Debug\net8.0\ShellingModel.pdb
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.AssemblyInfoInputs.cache
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.AssemblyInfo.cs
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.csproj.CoreCompileInputs.cache
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.dll
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\refint\ShellingModel.dll
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.pdb
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.genruntimeconfig.cache
+C:\Users\grady\source\repos\ShellingModel\ShellingModel\obj\Debug\net8.0\ref\ShellingModel.dll
+C:\Users\grady\source\repos\shellingModel\ShellingModel\obj\Debug\net8.0\ShellingModel.sourcelink.json
