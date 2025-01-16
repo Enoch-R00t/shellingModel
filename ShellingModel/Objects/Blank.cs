@@ -15,7 +15,7 @@ namespace ShellingModel.Objects
          //   rand = new Random();
         }
 
-        internal override string DisplayValue => " ";
+        internal override string DisplayValue => "_";
 
         //internal override bool HappyHere() => true; // rand.Next() > (Int32.MaxValue / 2);
     }

@@ -1,6 +1,8 @@
 ﻿using ShellingModel.AbstractClasses;
 using ShellingModel.Enums;
 
+using System.Text;
+
 namespace ShellingModel.Objects
 {
 
@@ -39,6 +41,29 @@ namespace ShellingModel.Objects
             }
 
             return count;
+        }
+
+        internal string[] StringifyGrid()
+        {
+            short w = 0;
+            short h = 0;
+            List<string> outputString = new List<string>();
+
+            while (h < GridHeight)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                while (w < GridWidth)
+                {
+                    sb.Append(Grid[h, w].DisplayValue);
+                    w++;
+                }
+                outputString.Add(sb.ToString());
+                w = 0;
+                h++;
+            }
+
+            return outputString.ToArray();
         }
 
         internal void WriteGrid()

@@ -6,8 +6,25 @@ using ShellingModel.AbstractClasses;
 using ShellingModel.Enums;
 using ShellingModel.Objects;
 
+using System.Text.Json;
+
 namespace ShellingModel
 {
+    // serialization classes
+    public class Dimension
+    {
+        public string height { get; set; }
+        public string width { get; set; }
+    }
+
+    public class Root
+    {
+        public List<Dimension> dimensions { get; set; }
+        public List<string> variables { get; set; }
+        public string values { get; set; }
+    }
+    // end serialization classes
+
     internal class Program
     {
         private static short gridHeight = 15;
