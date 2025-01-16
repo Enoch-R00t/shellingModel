@@ -3,13 +3,14 @@ using ShellingModel.Enums;
 
 namespace ShellingModel.Objects
 {
-    internal class ShellingGrid
+
+    internal class ShellingGrid //: ICloneable
     {
         internal short GridWidth;
         internal short GridHeight;
         internal ShellingObject[,] Grid;
 
-        public ShellingGrid(short GridWidth, short GridHeight)
+        public ShellingGrid(short GridHeight, short GridWidth)
         {
             this.GridWidth = GridWidth;
             this.GridHeight = GridHeight;
@@ -49,18 +50,18 @@ namespace ShellingModel.Objects
             {
                 while (w < GridWidth)
                 {
-                    if (!Grid[h, w].HappyHere())
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write(Grid[h, w]?.DisplayValue);
-                        Console.ResetColor();
-                    }
-                    else
-                    {
+                    //if (!Grid[h, w].HappyHere())
+                    //{
+                    //    Console.ForegroundColor = ConsoleColor.Red;
+                    //    Console.Write(Grid[h, w]?.DisplayValue);
+                    //    Console.ResetColor();
+                    //}
+                    //else
+                    //{
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.Write(Grid[h, w]?.DisplayValue);
                         Console.ResetColor();
-                    }
+                   // }
 
                     w++;
                 }
@@ -69,5 +70,51 @@ namespace ShellingModel.Objects
                 h++;
             }
         }
+
+        //public object Clone()
+        //{
+        //    var clonedShellingGrid = new ShellingGrid(GridWidth, GridHeight);
+        //    clonedShellingGrid.Grid = new ShellingObject[GridHeight, GridWidth];   
+            
+        //    short x = 0, y = 0; 
+
+        //    while(y < GridHeight)
+        //    {
+        //        while(x < GridWidth)
+        //        {
+        //            ShellingObject tempObject;
+
+        //            switch (Grid[y,x].Type)
+        //            {
+        //                case TypeEnum.X:
+        //                    tempObject = new X(Grid[y,x].Discomfortability, x, y, ref clonedShellingGrid);
+        //                    clonedShellingGrid.Grid[y, x] = tempObject;
+        //                    break;
+        //                case TypeEnum.Y:
+        //                    tempObject = new Y(Grid[y, x].Discomfortability, x, y, ref clonedShellingGrid);
+        //                    clonedShellingGrid.Grid[y, x] = tempObject;
+        //                    break;
+        //                case TypeEnum.O:
+        //                    tempObject = new O(Grid[y, x].Discomfortability, x, y, ref clonedShellingGrid);
+        //                    clonedShellingGrid.Grid[y, x] = tempObject;
+        //                    break;
+        //                case TypeEnum.T:
+        //                    tempObject = new T(Grid[y, x].Discomfortability, x, y, ref clonedShellingGrid);
+        //                    clonedShellingGrid.Grid[y, x] = tempObject;
+        //                    break;
+        //                case TypeEnum.Blank:
+        //                    tempObject = new Blank(Grid[y, x].Discomfortability, x, y, ref clonedShellingGrid);
+        //                    clonedShellingGrid.Grid[y, x] = tempObject;
+        //                    break;
+        //            }
+
+        //            x++;
+        //        }
+        //        x = 0;
+        //        y++;
+        //    }
+
+        //    return clonedShellingGrid;
+        //}
     }
 }
