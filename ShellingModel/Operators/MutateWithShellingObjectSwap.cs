@@ -13,17 +13,18 @@
 //        private double MutationProbability;
 
 //        public MutateWithShellingObjectSwap(double mutationProbability)
-//           // : base(mutationProbability)
+//        // : base(mutationProbability)
 //        {
 //            // base.RequiresEvaluatedPopulation = false;
 //            MutationProbability = mutationProbability;
 //        }
 
-//        public bool Enabled { 
-//            get => true; 
-//            set => throw new NotImplementedException(); 
+//        public bool Enabled
+//        {
+//            get => true;
+//            set => throw new NotImplementedException();
 //        }
-//        public bool RequiresEvaluatedPopulation { get ; set ; }
+//        public bool RequiresEvaluatedPopulation { get; set; }
 
 //        public int GetOperatorInvokedEvaluations()
 //        {
@@ -80,7 +81,7 @@
 
 
 //            var grid = ((ShellingObject)chromosome.Genes[first].ObjectValue).shellingGrid;
-           
+
 //            ShellingObject objVal = (ShellingObject)chromosome.Genes[first].ObjectValue;
 //            int gridYVal = objVal.yLoc;
 //            int gridXVal = objVal.xLoc;

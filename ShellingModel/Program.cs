@@ -6,11 +6,9 @@ using ShellingModel.AbstractClasses;
 using ShellingModel.Enums;
 using ShellingModel.Objects;
 
-using System.Text.Json;
-
 namespace ShellingModel
 {
-    // serialization classes
+    #region serialization classes
     public class Dimension
     {
         public string height { get; set; }
@@ -23,19 +21,15 @@ namespace ShellingModel
         public List<string> variables { get; set; }
         public string values { get; set; }
     }
-    // end serialization classes
+    #endregion serialization classes
 
     internal class Program
     {
         private static short gridHeight = 15;
         private static short gridWidth = 15;
-       
-        internal static ShellingGrid primingShellingGrid;
-
-        private static Random rand;
-
         private static double currentFitness = 0;
 
+        internal static ShellingGrid primingShellingGrid;
         internal static readonly short affinity = 1;
 
         static void Main(string[] args)
@@ -46,17 +40,14 @@ namespace ShellingModel
 
             SetUp();
 
-            rand = new Random();
-
             primingShellingGrid = new ShellingGrid(gridHeight,gridWidth);
             PopulateGrid(primingShellingGrid);
 
             var population = new Population();
 
             // iterate over the grid
-            for(var p = 0; p < 100 /*gridWidth * gridWidth*/; p++)
+            for(var p = 0; p < 100 ; p++)
             {
-
                 // create a new chromosome containing
                 // each indexed object from the grid.
                 var chromosome = new Chromosome();
@@ -118,8 +109,7 @@ namespace ShellingModel
         public static bool Terminate(Population population,
            int currentGeneration, long currentEvaluation)
         {
-            //return currentGeneration > 1000;
-            return currentFitness >= 99;
+            return currentFitness >= 90;
         }
 
         static void ga_OnRunComplete(object sender, GaEventArgs e)
@@ -130,7 +120,6 @@ namespace ShellingModel
 
             Console.WriteLine("Generation: {0}, Fitness: {1}", e.Generation, fittest.Fitness);
 
-            // write the grid
             DisplayGrid(fittest);
             
             Console.WriteLine("Complete");
@@ -141,6 +130,7 @@ namespace ShellingModel
             if (e.Generation % 100 == 0)
             {
                 var fittest = e.Population.GetTop(1)[0];
+                currentFitness = fittest.Fitness * 100;
                 Console.Clear();
                 DisplayGrid(fittest);
                 Console.WriteLine("Generation: {0}, Fitness: {1}", e.Generation, string.Format("{0:0.0000000000}",fittest.Fitness));
@@ -151,10 +141,10 @@ namespace ShellingModel
         static void SetUp()
         {
             Console.WriteLine("What grid dimensions? eg... <height>,<width>");
+
             var gridDimensions = Console.ReadLine();
             var inputVal = gridDimensions.Split(',');
             short.TryParse(inputVal[0], out gridHeight);
-            
             short.TryParse(inputVal[1], out gridWidth);
 
             //Console.WriteLine("Use the general solution? y/n");
